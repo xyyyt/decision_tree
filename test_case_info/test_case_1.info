@@ -1,0 +1,159 @@
+main_tree state after each operation
+
+
+1) add refund_decision :
+
+       Yes                              No
+       ------------ Refund ? -------------
+       |                                 |
+       |                                 |
+       |                                 |
+
+
+
+2) add refund_yes_leaf :
+
+       Yes                              No
+       ------------ Refund ? -------------
+       |                                 |
+       |                                 |
+       |                                 |
+  Have nothing
+    to pay
+
+
+
+3) add marital_status_decision :
+
+       Yes                              No
+       ------------ Refund ? -------------
+       |                                 |
+       |                                 |
+       |                                 |
+  Have nothing    Single,Divorced     Marital               Widower
+    to pay           ---------------- Status ? ------------------
+                     |                   |                      |
+                     |                   | Married              |
+                     |                   |                      |
+
+
+
+4) add taxable_income_decision :
+
+       Yes                              No
+       ------------ Refund ? -------------
+       |                                 |
+       |                                 |
+       |                                 |
+  Have nothing    Single,Divorced     Marital               Widower
+    to pay           ---------------- Status ? ------------------
+                     |                   |                      |
+                     |                   | Married              |
+                     |                   |                      |
+                  Taxable
+          ------- Income ? --------
+          |                       |
+          |                       |
+    < 80k |                       | > 80k
+          |                       |
+          |                       |
+
+
+
+5) add taxable_income_smaller_80k_leaf :
+
+       Yes                              No
+       ------------ Refund ? -------------
+       |                                 |
+       |                                 |
+       |                                 |
+  Have nothing    Single,Divorced     Marital               Widower
+    to pay           ---------------- Status ? ------------------
+                     |                   |                      |
+                     |                   | Married              |
+                     |                   |                      |
+                  Taxable
+          ------- Income ? --------
+          |                       |
+          |                       |
+    < 80k |                       | > 80k
+          |                       |
+          |                       |
+     Have nothing
+       to pay,
+      low income
+
+
+
+6) add taxable_income_higher_or_equal_80k_leaf :
+
+       Yes                              No
+       ------------ Refund ? -------------
+       |                                 |
+       |                                 |
+       |                                 |
+  Have nothing    Single,Divorced     Marital               Widower
+    to pay           ---------------- Status ? ------------------
+                     |                   |                      |
+                     |                   | Married              |
+                     |                   |                      |
+                  Taxable
+          ------- Income ? --------
+          |                       |
+          |                       |
+    < 80k |                       | >= 80k
+          |                       |
+          |                       |
+     Have nothing            Have to pay,
+       to pay,               high income
+      low income
+
+
+
+7) add marital_status_married_leaf :
+
+       Yes                              No
+       ------------ Refund ? -------------
+       |                                 |
+       |                                 |
+       |                                 |
+  Have nothing    Single,Divorced     Marital               Widower
+    to pay           ---------------- Status ? ------------------
+                     |                   |                      |
+                     |                   | Married              |
+                     |                   |                      |
+                  Taxable            Have to pay,
+          ------- Income ? --------   they are 2
+          |                       |
+          |                       |
+    < 80k |                       | >= 80k
+          |                       |
+          |                       |
+     Have nothing            Have to pay,
+       to pay,               high income
+      low income
+
+
+
+8) add marital_status_widower_leaf :
+
+       Yes                              No
+       ------------ Refund ? -------------
+       |                                 |
+       |                                 |
+       |                                 |
+  Have nothing    Single,Divorced     Marital               Widower
+    to pay           ---------------- Status ? ------------------
+                     |                   |                      |
+                     |                   | Married              |
+                     |                   |                      |
+                  Taxable            Have to pay,         Unknown action,
+          ------- Income ? --------   they are 2           situation not
+          |                       |                        stable enough
+          |                       |
+    < 80k |                       | >= 80k
+          |                       |
+          |                       |
+     Have nothing            Have to pay,
+       to pay,               high income
+      low income

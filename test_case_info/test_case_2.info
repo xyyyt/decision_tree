@@ -1,0 +1,76 @@
+main_tree state after each operation
+
+
+1) add what_weather_is_it_decision :
+
+
+      Sunny       Rainy         what weather         Gloomy       Snowy
+      -------------------------    is it ?   --------------------------
+      |             |                                   |             |
+      |             |                                   |             |
+      |             |                                   |             |
+      |             |                                   |             |
+
+
+
+2) add what_weather_is_it_sunny_leaf :
+
+
+      Sunny       Rainy         what weather         Gloomy       Snowy
+      -------------------------    is it ?   --------------------------
+      |             |                                   |             |
+      |             |                                   |             |
+      |             |                                   |             |
+      |             |                                   |             |
+
+  go make
+     a
+  barbecue !
+
+
+
+3) add what_weather_is_it_rainy_leaf :
+
+
+      Sunny       Rainy         what weather         Gloomy       Snowy
+      -------------------------    is it ?   --------------------------
+      |             |                                   |             |
+      |             |                                   |             |
+      |             |                                   |             |
+      |             |                                   |             |
+
+  go make      stay at home
+     a           and go
+  barbecue !     sleep !
+
+
+
+4) add what_weather_is_it_gloomy_leaf :
+
+
+      Sunny       Rainy         what weather         Gloomy       Snowy
+      -------------------------    is it ?   --------------------------
+      |             |                                   |             |
+      |             |                                   |             |
+      |             |                                   |             |
+      |             |                                   |             |
+
+  go make      stay at home                      stay at home
+     a           and go                           and go play
+  barbecue !     sleep !                         video games !
+
+
+
+5) add what_weather_is_it_snowy_leaf :
+
+
+      Sunny       Rainy         what weather         Gloomy       Snowy
+      -------------------------    is it ?   --------------------------
+      |             |                                   |             |
+      |             |                                   |             |
+      |             |                                   |             |
+      |             |                                   |             |
+
+  go make      stay at home                      stay at home      go make
+     a           and go                           and go play     a snowball
+  barbecue !     sleep !                         video games !      fight !
